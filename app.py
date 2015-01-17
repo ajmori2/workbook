@@ -1,7 +1,6 @@
 
 # import the Flask class from the flask module
 from flask import Flask, render_template, jsonify
-from stock_scraper import get_data
 from utilities import load_src
 
 # create the application object
@@ -15,8 +14,9 @@ def home():
 # Generic route for MPs
 @app.route('/mp/<mpName>')
 def mp(mpName):
-    load_src("mp_alice", "py/compute.py")
-    from mp_alice import do_compute
+    #load_src("mp_alice", "py/compute.py")
+    load_src("mpCode", 'py/' + mpName + '/compute.py')
+    from mpCode import do_compute
     do_compute()
     return render_template(mpName + '/index.html')
 
@@ -30,6 +30,8 @@ def welcome():
 
 @app.route('/data')
 def data():
+    load_src("stocks","py/stock_scraper.py")
+    from stocks import get_data
     return jsonify(get_data())
 
 @app.route('/images')
