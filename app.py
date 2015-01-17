@@ -12,9 +12,18 @@ app = Flask(__name__)
 def home():
     return render_template('mainPage.html')
 
+
+# Generic route for MPs
+@app.route('/mp/<mpName>')
+def mp(mpName):
+    from compute import do_compute
+    do_compute()
+    return render_template(mpName + '/index.html')
+
+
 @app.route('/mp1')
 def mp1():
-    return render_template('mp1.html')  # render a template
+    return render_template('mp1/index.html')  # render a template
 
 @app.route('/welcome')
 def welcome():
