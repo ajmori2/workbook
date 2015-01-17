@@ -2,7 +2,6 @@
 # import the Flask class from the flask module
 from flask import Flask, render_template, jsonify
 from stock_scraper import get_data
-from imageSingle import get_image_data
 
 # create the application object
 app = Flask(__name__)
@@ -35,6 +34,7 @@ def data():
 
 @app.route('/images')
 def imagest():
+    from imageSingle import get_image_data
     return jsonify(get_image_data())
 
 # start the server with the 'run()' method
