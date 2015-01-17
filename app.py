@@ -2,6 +2,7 @@
 # import the Flask class from the flask module
 from flask import Flask, render_template, jsonify
 from stock_scraper import get_data
+from utilities import load_src
 
 # create the application object
 app = Flask(__name__)
@@ -11,14 +12,13 @@ app = Flask(__name__)
 def home():
     return render_template('mainPage.html')
 
-
 # Generic route for MPs
 @app.route('/mp/<mpName>')
 def mp(mpName):
-    from compute import do_compute
+    load_src("mp_alice", "py/compute.py")
+    from mp_alice import do_compute
     do_compute()
     return render_template(mpName + '/index.html')
-
 
 @app.route('/mp1')
 def mp1():
@@ -34,6 +34,7 @@ def data():
 
 @app.route('/images')
 def imagest():
+    load_src("imageSingle", "py/imageSingle.py")
     from imageSingle import get_image_data
     return jsonify(get_image_data())
 
