@@ -2,10 +2,10 @@
 from PIL import Image, ImageFilter
 
 
-def get_image_data():
+def do_compute():
 
-    orig_name = "static/raw/packers.jpg"
-    new_name = "static/web/packers.jpg"
+    orig_name = "static/lab_ImageSingle/packers.jpg"
+    new_name = "static/lab_ImageSingle/packersNEW.jpg"
     # bring data into memory
     orig = Image.open(orig_name)
     pixels = orig.load()
@@ -22,4 +22,4 @@ def get_image_data():
     # return dictionary
     return RESULTS
 
-get_image_data()
+#get_image_data()

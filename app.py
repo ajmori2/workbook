@@ -11,14 +11,14 @@ app = Flask(__name__)
 def home():
     return render_template('mainPage.html')
 
-# Generic route for MPs
-@app.route('/mp/<mpName>')
-def mp(mpName):
-    #load_src("mp_alice", "py/compute.py")
-    load_src("mpCode", 'py/' + mpName + '/compute.py')
-    from mpCode import do_compute
+# Generic route for exercises
+@app.route('/<exType>/<exName>')
+def ex(exType,exName):
+    wholeName = exType + '_' + exName
+    load_src("exCode", 'py/' + wholeName + '/compute.py')
+    from exCode import do_compute
     do_compute()
-    return render_template(mpName + '/index.html')
+    return render_template(wholeName + '/index.html')
 
 @app.route('/mp1')
 def mp1():
