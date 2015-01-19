@@ -1,0 +1,1 @@
+This directory must contain a file called compute.py that defines a function named "do_compute()"  The main application file will deploy that function when the user navigates to the corresponding menu item.
