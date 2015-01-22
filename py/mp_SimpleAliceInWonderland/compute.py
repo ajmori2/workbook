@@ -33,5 +33,3 @@ def do_compute():
     with open('static/mp_SimpleAliceInWonderland/data.json','w') as outfile:
         json.dump(outDataSorted[:20], outfile, sort_keys=True, indent=4, ensure_ascii=False)
     
-
-do_compute()
