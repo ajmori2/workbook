@@ -1,41 +1,37 @@
-import string
-import collections
+from nltk.probability import FreqDist                                       
+from nltk.corpus import PlaintextCorpusReader, stopwords
+from nltk.stem import PorterStemmer
+from operator import itemgetter
+import json
 
 def do_compute():
-    # Create a dictionary that will init missing values as ints (as 0)    
-    wordList = collections.defaultdict(int)
-    
-    # Count the times each word appears in Alice in Wonderland
-    f = open('static/mp_SimpleAliceInWonderland/AliceInWonderland.txt', 'r');
 
-    for line in f:
-        for word in line.split():
-            
-            word = filter(lambda x: x in string.ascii_letters, word)            
-            
-            if word != "":
-                wordList[word] += 1
-    
-    f.close()
-    
-    
-    # Write the sorted list out
-    sortedWordList = sorted(wordList, key = wordList.get, reverse=True)
-    
-    f = open('static/mp_SimpleAliceInWonderland/out.js', 'w');
-    
-    f.write('var data = {\n')
-    for i in range(50):
-        if i > 0:
-            f.write(',\n')
-            
-        word = sortedWordList[i]
-        f.write('\t' + word + ': ' + str(wordList[word]))
+    # read text file into memory
+    raw_text = PlaintextCorpusReader('static/mp_SimpleAliceInWonderland', 'AliceInWonderland.txt')
 
-    f.write('\n}')
+    #get the important words (data cleaning)
+    words = raw_text.words()
+    words = [w.lower() for w in words]
+    words = [w for w in words if w.isalpha()]
+    words = [w for w in words if not w in stopwords.words('english')]
+    words = [PorterStemmer().stem(w) for w in words]
 
-    f.close()
+    #compute frequencies
+    freq = FreqDist(words)
 
-      
+    #now that we've counted, remove duplicates from word list
+    words = set(words)
+
+    #build dictionary for json
+    outData = []
+    for w in words:
+        outData.append({'word':str(w), 'freq':freq[w]})
+
+    outDataSorted = sorted(outData, key=itemgetter('freq'), reverse=True)
+
+    #dump dict to json file
+    with open('static/mp_SimpleAliceInWonderland/data.json','w') as outfile:
+        json.dump(outDataSorted[:20], outfile, sort_keys=True, indent=4, ensure_ascii=False)
     
-    
+
+do_compute()

@@ -17,28 +17,8 @@ def ex(exType,exName):
     wholeName = exType + '_' + exName
     load_src("exCode", 'py/' + wholeName + '/compute.py')
     from exCode import do_compute
-    do_compute()
+    do_compute() #writes json file that wholeName/index.html reads
     return render_template(wholeName + '/index.html')
-
-@app.route('/mp1')
-def mp1():
-    return render_template('mp1/index.html')  # render a template
-
-@app.route('/welcome')
-def welcome():
-    return render_template('welcome.html')  # render a template
-
-@app.route('/data')
-def data():
-    load_src("stocks","py/stock_scraper.py")
-    from stocks import get_data
-    return jsonify(get_data())
-
-@app.route('/images')
-def imagest():
-    load_src("imageSingle", "py/imageSingle.py")
-    from imageSingle import get_image_data
-    return jsonify(get_image_data())
 
 # start the server with the 'run()' method
 if __name__ == '__main__':
