@@ -20,10 +20,6 @@ def ex(exType,exName):
     do_compute()
     return render_template(wholeName + '/index.html')
 
-@app.route('/mp1')
-def mp1():
-    return render_template('mp1/index.html')  # render a template
-
 @app.route('/welcome')
 def welcome():
     return render_template('welcome.html')  # render a template
