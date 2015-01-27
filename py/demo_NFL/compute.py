@@ -11,6 +11,12 @@ def isNavy(p):
 def isBrightGreen(p):
     return (pixelDist(p,(50,200,50)) < 12000)
 
+def makeGold((r,g,b)):
+    return (255,255,100)
+
+def makeGreen((r,g,b)):
+    return (0,120,0)
+
 def packerfy(im):
     pack = im.copy()
     w,h = pack.size
@@ -19,9 +25,9 @@ def packerfy(im):
     for x in range(w):
         for y in range(h):
             if isNavy(pixels[x,y]):
-                pixels[x,y] = (0,110,0) #green
+                pixels[x,y] = makeGreen(pixels[x,y])
             elif isBrightGreen(pixels[x,y]):
-                pixels[x,y] = (255,255,100) #yellow
+                pixels[x,y] = makeGold(pixels[x,y])
 
     return pack
 
@@ -29,7 +35,7 @@ def do_compute():  #required for web app
 
     #set up file names to use for I/O
     orig_name = "static/demo_NFL/ssfans.jpg"
-    new_name = "static/demo_NFL/packerfy.jpg"
+    new_name = "static/demo_NFL/packerfy2.jpg"
 
     # bring data into memory
     orig = Image.open(orig_name)
@@ -40,7 +46,7 @@ def do_compute():  #required for web app
     # build list of dictionary(s) containing orig and new
     outData = [{'orig': '/'+ orig_name, 'new': '/'+ new_name }]
 
-    with open('static/demo_Welcome/data.json','w') as outfile:
+    with open('static/demo_NFL/data.json','w') as outfile:
         json.dump(outData, outfile, indent=4, ensure_ascii=False)
 
 
