@@ -1,27 +1,51 @@
-
-# import the Flask class from the flask module
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, send_file, send_from_directory
 from utilities import load_src
+import os
 
 # create the application object
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+app.template_folder = '.'
+app.debug = True
 
-# use decorators to link the function to a url
+# save the starting cwd
+basecwd = os.getcwd()
+
+
+# Route the base URL to the main page
 @app.route('/')
 def home():
-    return render_template('mainPage.html')
+    return render_template('templates/mainPage.html')
 
-# Generic route for exercises
-@app.route('/<exType>/<exName>')
-def ex(exType,exName):
-    wholeName = exType + '_' + exName
-    load_src("exCode", 'py/' + wholeName + '/compute.py')
-    from exCode import do_compute
-    do_compute() #writes json file that wholeName/index.html reads
-    return render_template(wholeName + '/index.html')
+@app.route('/<exerciseName>/res/<path:fileName>')
+def fetchRes(exerciseName, fileName):
+	return send_from_directory(os.path.join(exerciseName, 'res'), fileName)
+
+# Route everything else to an exercise:
+@app.route('/<exerciseName>/')
+def fetchExercise(exerciseName):
+	# Load the compute.py for the specific exercise
+	os.chdir(os.path.join(basecwd, exerciseName, 'py'))
+	
+	load_src('exercisePythonFile', os.path.join(exerciseName, 'py', 'compute.py'))
+	
+	# Change the cwd to be relative to the py directory
+	os.chdir(os.path.join(basecwd, exerciseName))
+	
+	# Run the do_compute() function from compute.py
+	from exercisePythonFile import do_compute
+	do_compute()
+
+	# Return the cwd to the root of the workbook
+	os.chdir(basecwd)
+	
+	# Render the web template
+	result = render_template(os.path.join(exerciseName, 'web', 'index.html'))
+	
+	return result
+
 
 # start the server with the 'run()' method
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
 

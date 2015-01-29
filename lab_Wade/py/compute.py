@@ -104,8 +104,8 @@ def do_compute():  #required for web app
     #import os
     #set up file names to use for I/O
 
-    orig_name = "static/lab_Wade/packers.jpg"
-    new_name = "static/lab_Wade/packersNEW.jpg"
+    orig_name = "res/packers.jpg"
+    new_name = "res/packersNEW.jpg"
 
     # bring data into memory
     orig = Image.open(orig_name)
@@ -159,8 +159,8 @@ def do_compute():  #required for web app
     orig.save(new_name)
 
     # build list of dictionary(s) containing orig and new
-    outData = [{'orig': '/'+ orig_name, 'new': '/'+ new_name }]
+    outData = [{'orig': orig_name, 'new': new_name }]
 
-    with open('static/lab_Wade/data.json','w') as outfile:
+    with open('res/data.json','w') as outfile:
         json.dump(outData, outfile, indent=4, ensure_ascii=False)
 
