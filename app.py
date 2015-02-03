@@ -21,6 +21,10 @@ def home():
 def fetchRes(exerciseName, fileName):
 	return send_from_directory(os.path.join(exerciseName, 'res'), fileName)
 
+@app.route('/<exerciseName>/js/<path:fileName>')
+def fetchJS(exerciseName, fileName):
+	return send_from_directory(os.path.join(exerciseName, 'js'), fileName)
+
 # Route everything else to an exercise:
 @app.route('/<exerciseName>/')
 def fetchExercise(exerciseName):
