@@ -29,12 +29,12 @@ def fetchJS(exerciseName, fileName):
 @app.route('/<exerciseName>/')
 def fetchExercise(exerciseName):
 	# Load the compute.py for the specific exercise
-	os.chdir(os.path.join(basecwd, exerciseName, 'py'))
-	
-	load_src('exercisePythonFile', os.path.join(exerciseName, 'py', 'compute.py'))
+    #os.chdir(os.path.join(basecwd, exerciseName, 'py'))
 	
 	# Change the cwd to be relative to the py directory
 	os.chdir(os.path.join(basecwd, exerciseName))
+
+	load_src('exercisePythonFile', os.path.join(exerciseName, 'py', 'compute.py'))
 	
 	# Run the do_compute() function from compute.py
 	from exercisePythonFile import do_compute
