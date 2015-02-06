@@ -1,27 +1,27 @@
 [
     {
-        "avg": "res/2_11avg.jpg", 
-        "fn2": "res/11.jpg", 
-        "fn1": "res/2.jpg"
+        "avg": "res/15_18avg.jpg", 
+        "fn2": "res/18.jpg", 
+        "fn1": "res/15.jpg"
     }, 
     {
-        "avg": "res/7_13avg.jpg", 
-        "fn2": "res/13.jpg", 
-        "fn1": "res/7.jpg"
+        "avg": "res/14_9avg.jpg", 
+        "fn2": "res/9.jpg", 
+        "fn1": "res/14.jpg"
     }, 
     {
-        "avg": "res/9_10avg.jpg", 
-        "fn2": "res/10.jpg", 
-        "fn1": "res/9.jpg"
-    }, 
-    {
-        "avg": "res/17_14avg.jpg", 
-        "fn2": "res/14.jpg", 
+        "avg": "res/17_12avg.jpg", 
+        "fn2": "res/12.jpg", 
         "fn1": "res/17.jpg"
     }, 
     {
-        "avg": "res/2_13avg.jpg", 
-        "fn2": "res/13.jpg", 
-        "fn1": "res/2.jpg"
+        "avg": "res/16_11avg.jpg", 
+        "fn2": "res/11.jpg", 
+        "fn1": "res/16.jpg"
+    }, 
+    {
+        "avg": "res/8_15avg.jpg", 
+        "fn2": "res/15.jpg", 
+        "fn1": "res/8.jpg"
     }
 ]

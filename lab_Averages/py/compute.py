@@ -8,27 +8,25 @@ import random
 def average(num1,num2):
     # average of two numbers
     # note we truncate before adding, not after
-    avg = num1/2 + num2/2
+
+
     return avg
 
 def take_Average(px1,px2,pixels,width,height):
     
     # For every pixel in the smaller dimensions
-    for x in range(width):
-        for y in range(height):
+
             
             # Get current RGB values
-            r1,g1,b1 = px1[x,y]
-            r2,g2,b2 = px2[x,y]
+
 
             # Average them
             r = average(r1,r2)
             g = average(g1,g2)
             b = average(b1,b2)
             
-            # set pixels to the averages
-            #print r2,g2,b2
-            pixels[x,y]= (r,g,b)
+            # set current pixel value to the averages
+
 
     # return result
     return pixels
@@ -37,57 +35,68 @@ def take_Average(px1,px2,pixels,width,height):
 def process_ImgFiles(fn1,fn2):
     
     # load the two images
-    img1 = Image.open(fn1)
-    pixels1 = img1.load()
-
-    img2 = Image.open(fn2)
-    pixels2 = img2.load()
+    # including current pixel values
 
     # get the size of each image
-    width1,height1 = img1.size
-    width2,height2 = img2.size
 
+    # Note that a problem you need to address is what happens if your
+    # two images are not the same size. Here we take the simple approach
+    # that we only average in the smaller of each of the dimensions.
+    # You can think about how else you might solve this problem and
+    # implement your own approach if you like.
     # only operate on the smaller dimensions
     width = min(width1,width2)
     height = min(height1,height2)
     
-    # new Image with min dimensions
+    # Create a new Image with the minimum dimensions
+    # This is what we will use to store the average
     im = Image.new('RGB', (width,height), "white")
     avgpixels = im.load()
     
+    # Get the average from the two images you just loaded
     avgpixels = take_Average(pixels1,pixels2,avgpixels,width,height)
-    return im, avgpixels
+    
+    # Return the average image up to do_compute
+    return im
 
 def do_compute():  #required for web app
 
-    # get filenames in res directory
-    filenames = os.listdir('./res')
-    #print filenames
+    # Get a list of all the filenames in the resources (res) directory
+    filenames =
     
-    # check that they are images and not averages
-    img_filenames = ["res/" + fn for fn in filenames if fn[-4:]==".jpg" and fn[-7:-4] != "avg"]
     
-    outData = []
+    # Check that they are images
+    # Check that they are not already averaged (note the naming convention for average images on line 83)
+    # Prepend the directory (res) on to the front of the filename
+    # Make sure the output here is also a list
+    img_filenames =
     
-    # pick two at random to average
-    num_results = 5
-    for n in range(num_results):
+    # Initialize a list of the output data you'll be creating
+    outData =
+    
+    # Create five separate results, each of which should select a random pair of images and show those two images and the averaged result.
+    # Loop through five times
+    
 
-        # pick two files at random to average
-        fn1 = random.choice(img_filenames)
-        fn2 = random.choice([x for x in img_filenames if x not in [fn1]])
+        # Pick two files at random to average
+        # Make sure that the second filename is not the same as the first
+        fn1 =
+        fn2 =
         
-        # new filename for saving
-        new_fn = fn1[:-4] + "_" + fn2[4:-4] + "avg.jpg"
+        # Create a new filename that you'll use to save the output
+        new_fn =
     
-        # take the average of the two images
-        im, pixels = process_ImgFiles(fn1,fn2)
+        # Process the two images associated with the random filenames chosen, including finding the average. Return an image with the average values.
+        im = process_ImgFiles(fn1,fn2)
     
-        # Save file
-        im.save(new_fn)
+        # Save the image with the average values to the filename you just created
+        
     
-        # build list of dictionary(s) containing origal images and new
-        outData.append({'fn1': fn1, 'fn2': fn2, 'avg' : new_fn})
+        # Build list of dictionary(s) containing origal images and new
+        # Filename 1 should have key fn1
+        # Filename 2 should have key fn2
+        # The averaged image should have key avg
+        outData.append()
 
     # output the data in a format readable by the workbook
     with open('res/data.json','w') as outfile:
