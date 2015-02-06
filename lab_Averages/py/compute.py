@@ -84,6 +84,9 @@ def do_compute():  #required for web app
         fn2 =
         
         # Create a new filename that you'll use to save the output
+        # If the two files you chose were named "1.jpg" and "2.jpg"
+        # Your resulting filename should follow the format:
+        # "1_2avg.jpg"
         new_fn =
     
         # Process the two images associated with the random filenames chosen, including finding the average. Return an image with the average values.
