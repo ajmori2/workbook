@@ -1,0 +1,27 @@
+[
+    {
+        "avg": "res/2_11avg.jpg", 
+        "fn2": "res/11.jpg", 
+        "fn1": "res/2.jpg"
+    }, 
+    {
+        "avg": "res/7_13avg.jpg", 
+        "fn2": "res/13.jpg", 
+        "fn1": "res/7.jpg"
+    }, 
+    {
+        "avg": "res/9_10avg.jpg", 
+        "fn2": "res/10.jpg", 
+        "fn1": "res/9.jpg"
+    }, 
+    {
+        "avg": "res/17_14avg.jpg", 
+        "fn2": "res/14.jpg", 
+        "fn1": "res/17.jpg"
+    }, 
+    {
+        "avg": "res/2_13avg.jpg", 
+        "fn2": "res/13.jpg", 
+        "fn1": "res/2.jpg"
+    }
+]
