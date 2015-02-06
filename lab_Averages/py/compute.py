@@ -66,7 +66,7 @@ def do_compute():  #required for web app
     
     
     # Check that they are images
-    # Check that they are not already averaged (note the naming convention for average images on line 83)
+    # Check that they are not already averaged (note the naming convention for average images on line 86)
     # Prepend the directory (res) on to the front of the filename
     # Make sure the output here is also a list
     img_filenames =
