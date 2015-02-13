@@ -28,9 +28,6 @@ def fetchJS(exerciseName, fileName):
 # Route everything else to an exercise:
 @app.route('/<exerciseName>/')
 def fetchExercise(exerciseName):
-	# Load the compute.py for the specific exercise
-    #os.chdir(os.path.join(basecwd, exerciseName, 'py'))
-	
 	# Change the cwd to be relative to the py directory
 	os.chdir(os.path.join(basecwd, exerciseName))
 
@@ -44,7 +41,7 @@ def fetchExercise(exerciseName):
 	os.chdir(basecwd)
 	
 	# Render the web template
-	result = render_template(os.path.join(exerciseName, 'web', 'index.html'))
+	result = render_template(exerciseName + '/web/index.html')
 	
 	return result
 
