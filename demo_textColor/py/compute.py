@@ -1,56 +1,23 @@
-# imports/modules
-#import os
-#import random
 import json
-import re
-#import collections
-#from nltk.corpus import PlaintextCorpusReader
 from nltk.tokenize import word_tokenize
-from collections import defaultdict
-from csv import DictReader
-
-
-# Convert (r, g, b) into #rrggbb color
-def getRGBstring( (r, g, b) ):
-    s = "#"
-    s = s + format(int(r), '02x')
-    s = s + format(int(g), '02x')
-    s = s + format(int(b), '02x')
-    return s
-
+from collections import Counter
 
 def do_compute():
 
     #load the color name files
-    colorNamesFile = 'res/colorNames.csv'
-    colorRaw = open(colorNamesFile)
-    reader = DictReader(colorRaw,skipinitialspace=True)
+    colorNamesFile = 'res/colorNames.txt'
+    colorRaw = open(colorNamesFile).read()
+    colorNames = word_tokenize(colorRaw)
     
-    colorData = defaultdict(str)
-    colorNames = []
-    for row in reader:
-        colorData[row['name']] = row['rgb']
-        colorNames.append(row['name'])
- 
-
 	# Open the text
     textFile = 'res/hg.txt'
     textRaw = open(textFile).read()
-    words = word_tokenize(textRaw)
-    print words[:130]
+    words = word_tokenize(textRaw.decode('utf8'))
 
-
-    freq = defaultdict(int)
+    freq = Counter()
     for w in words:
         if w in colorNames:
             freq[w] += 1
-                    
-
-    colorHex = defaultdict(str)
-    for color in colorData:
-        c = re.split('\D',colorData[color])[1:4]
-        colorHex[color] = getRGBstring(c)
-        
         
     # freq:
     #   { "blue": 100,
@@ -61,8 +28,7 @@ def do_compute():
     
 	# Save the processed information
     output = { 'file': textFile,
-	           'freq': freq,
-              'nameHex': colorHex }
+	           'freq': freq }
 	
     f = open("res/freq.json",'w')
     s = json.dumps(output, indent = 4)

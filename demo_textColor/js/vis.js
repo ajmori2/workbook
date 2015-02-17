@@ -22,7 +22,8 @@ function main() {
 			data = _.sortBy(data,
 			                function (d) {
 			                   var color = tinycolor(d.color);
-			                   return color.toHsl().h;
+			                   //return color.toHsl().h;
+			                   return d.count;
 			                });
 			                
 			var maxValue = _.max(data,
