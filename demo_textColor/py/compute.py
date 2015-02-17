@@ -9,11 +9,13 @@ def do_compute():
     colorRaw = open(colorNamesFile).read()
     colorNames = word_tokenize(colorRaw)
     
-	# Open the text
+	 #Open the text
     textFile = 'res/hg.txt'
     textRaw = open(textFile).read()
     words = word_tokenize(textRaw.decode('utf8'))
+    words = [w.lower() for w in words]
 
+    #tally color words from the text
     freq = Counter()
     for w in words:
         if w in colorNames:
@@ -33,7 +35,4 @@ def do_compute():
     f = open("res/freq.json",'w')
     s = json.dumps(output, indent = 4)
     f.write(s)
-
-	
- 
 
