@@ -4,10 +4,6 @@
 function main() {
     $.getJSON("res/freq.json",
         function (jsonData) {
-        	// Add the image
-        	document.getElementById("img").innerHTML =
-        		'<img src="' + jsonData.file + '" class="img-responsive" />';
-
 			// Add the graph
 			var freq = jsonData.freq;
 			
@@ -25,45 +21,85 @@ function main() {
 			                   //return color.toHsl().h;
 			                   return d.count;
 			                });
-			                
-			var maxValue = _.max(data,
-			                     function (d) {
-			                       return d.count;
-			                     }).count;
-	
+
+			var margin = { top: 50,
+			               left: 50,
+			               right: 50,
+			               bottom: 50 };
 			
-			data = _.first(data, 100);
-			//alert( JSON.stringify(data) );
+			var realW = document.getElementById("freq").offsetWidth;
 			
-			var w = 400,
-			    h = 400;
+			var width = realW - margin.left - margin.right,
+			    height = 400 - margin.top - margin.bottom;
+
+			// We will use a ordinal scale, allowing us to map a series of elements
+			// to a range (which will be the location on the x-axis of the bar
+			// graph).
+			// @see: https://github.com/mbostock/d3/wiki/Ordinal-Scales
+			//
+			// Our domain is the names of the color, as an array.
+			//   Ex: ["red", "green", "yellow", ...]
+			//
+			// To translate our data, which is an array of objects that contain
+			// both a .color and a .count, into an array of only color names,
+			// we will use _.map() to map our array into a new array.
+			//
+			// Our range is all the values in [0, width].
 			
+			var x =
+			   d3.scale.ordinal()
+			           .domain( data.map(function (d) { return d.color; } ) )
+			           .rangeBands( [0, width], 0.1 );
+			           
+			var y =
+			   d3.scale.linear()
+			           .domain( [0, d3.max( data, function(d) { return d.count; } )] )
+			           .range( [height, 0] );
+
+			var xAxis =
+			   d3.svg.axis()
+			         .scale( x )
+			         .orient("bottom");
+			
+			var yAxis =
+				d3.svg.axis()
+				      .scale(y)
+				      .orient("left");
+			         
+			var svg =
 			d3.select("#freq")
 			  .append("svg")
-			  .attr("w", w)
-			  .attr("h", h)
-			  .style("height", "400px")
-			  			  
-			  .selectAll("rect")
+			  .attr("w", width + margin.left + margin.right)
+			  .attr("h", height + margin.top + margin.bottom)
+			  .style("width", (width + margin.left + margin.right) + "px")
+			  .style("height", (height + margin.top + margin.bottom) + "px")
+			  .attr("transform", "translate(" + margin.left + ", " + margin.top + ")")
+			  ;
+			  
+			svg.selectAll("rect")
 			  .data(data)
 			  .enter()
 			  
 			  .append("rect")
-			  .attr("x", function (d, i) { return i * 8; } )
-			  .attr("y", function (d, i) { return h - ( ((d.count / maxValue) * 400)); })
-			  .attr("width", 8)
-			  .attr("height", function (d) { return (d.count / maxValue) * 400; })
+			  .attr("x", function (d, i) { return x(d.color); } )
+			  .attr("y", function (d, i) { return y(d.count); })
+			  .attr("width", x.rangeBand() )
+			  .attr("height", function (d) { return height - y(d.count); })
 			  .style("fill", function (d) { return d.color; })
+			  .style("stroke", function(d, i) { return tinycolor(d.color).darken(); })
+			  .style("stroke-width", 1)
 			  ;
-/*			  
-			  .style("text-align", "right")
-			  .style("width", function (d) { return  + "px";})
-			 // .style("height", "5px")
-			  .style("background-color", function (d) { return d.color; })
-			  .text( function(d) { return d.count; } );
-*/			  		
-			
-			
+			  
+			svg.append("g")
+			  .attr("class", "axis")
+			  .call(yAxis)
+			  ;
+			  
+			svg.append("g")
+			  .attr("class", "axis")
+			  .attr("transform", "translate(0, " + height + ")")
+			  .call(xAxis)
+			  ;
         })
         .fail(function (d) { alert("Failed to load JSON!"); })
     ;                              
