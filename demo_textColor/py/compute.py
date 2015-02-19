@@ -20,7 +20,7 @@ def makeFreq(textFile,colorNames):
 def do_compute():
 
     #load the color name files
-    colorNamesFile = '../res/colorNames.txt'
+    colorNamesFile = 'res/colorNames.txt'
     colorRaw = open(colorNamesFile).read()
     colorNames = word_tokenize(colorRaw)
     
