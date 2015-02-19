@@ -64,8 +64,11 @@ function main() {
 			var yAxis =
 				d3.svg.axis()
 				      .scale(y)
-				      .orient("left");
+				      .orient("right");
+                      
 			         
+            alert( d3.max( data, function(d) { return d.count; } ))
+
 			var svg =
 			d3.select("#freq")
 			  .append("svg")

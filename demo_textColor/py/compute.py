@@ -2,15 +2,7 @@ import json
 from nltk.tokenize import word_tokenize
 from collections import Counter
 
-def do_compute():
-
-    #load the color name files
-    colorNamesFile = 'res/colorNames.txt'
-    colorRaw = open(colorNamesFile).read()
-    colorNames = word_tokenize(colorRaw)
-    
-	 #Open the text
-    textFile = 'res/hg.txt'
+def makeFreq(textFile,colorNames):
     textRaw = open(textFile).read()
     words = word_tokenize(textRaw.decode('utf8'))
     words = [w.lower() for w in words]
@@ -20,19 +12,33 @@ def do_compute():
     for w in words:
         if w in colorNames:
             freq[w] += 1
-        
-    # freq:
-    #   { "blue": 100,
-    #     "gray": 200,
-    #     "gold": 300,
-    #     ...
-    #    }
-    
-	# Save the processed information
-    output = { 'file': textFile,
+           
+    textFreq = { 'file': textFile,
 	           'freq': freq }
-	
+    return textFreq
+    
+def do_compute():
+
+    #load the color name files
+    colorNamesFile = '../res/colorNames.txt'
+    colorRaw = open(colorNamesFile).read()
+    colorNames = word_tokenize(colorRaw)
+    
+    outData = []
+    #build the freq table
+    textDict = makeFreq('res/hg.txt',colorNames)
+	 #Save the processed information
+    outData.append(textDict)  
+    
+    textDict = makeFreq('res/cf.txt',colorNames)
+	 #Save the processed information
+    outData.append(textDict)
+    
+    textDict = makeFreq('res/mj.txt',colorNames)
+	 #Save the processed information
+    outData.append(textDict)
+    
     f = open("res/freq.json",'w')
-    s = json.dumps(output, indent = 4)
+    s = json.dumps(outData, indent = 4)
     f.write(s)
 

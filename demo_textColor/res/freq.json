@@ -1,23 +1,75 @@
-{
-    "freq": {
-        "blue": 16, 
-        "gray": 11, 
-        "gold": 19, 
-        "golden": 7, 
-        "purple": 3, 
-        "plum": 4, 
-        "aqua": 1, 
-        "yellow": 9, 
-        "orange": 20, 
-        "pink": 9, 
-        "black": 33, 
-        "violet": 1, 
-        "olive": 1, 
-        "green": 31, 
-        "white": 27, 
-        "silver": 14, 
-        "red": 30, 
-        "lime": 1
+[
+    {
+        "freq": {
+            "blue": 16, 
+            "gray": 11, 
+            "gold": 19, 
+            "golden": 7, 
+            "purple": 3, 
+            "plum": 4, 
+            "aqua": 1, 
+            "yellow": 9, 
+            "orange": 20, 
+            "pink": 9, 
+            "black": 33, 
+            "violet": 1, 
+            "olive": 1, 
+            "green": 31, 
+            "white": 27, 
+            "silver": 14, 
+            "red": 30, 
+            "lime": 1
+        }, 
+        "file": "res/hg.txt"
     }, 
-    "file": "res/hg.txt"
-}
+    {
+        "freq": {
+            "pink": 14, 
+            "gray": 11, 
+            "ivory": 1, 
+            "magenta": 1, 
+            "gold": 20, 
+            "golden": 15, 
+            "purple": 8, 
+            "blue": 23, 
+            "aqua": 1, 
+            "azure": 1, 
+            "yellow": 5, 
+            "lavender": 1, 
+            "orange": 14, 
+            "black": 28, 
+            "olive": 2, 
+            "green": 22, 
+            "white": 45, 
+            "silver": 7, 
+            "red": 13, 
+            "lime": 1
+        }, 
+        "file": "res/cf.txt"
+    }, 
+    {
+        "freq": {
+            "blue": 17, 
+            "gray": 23, 
+            "turquoise": 1, 
+            "magenta": 1, 
+            "gold": 5, 
+            "golden": 4, 
+            "purple": 4, 
+            "salmon": 1, 
+            "aqua": 1, 
+            "lavender": 1, 
+            "yellow": 13, 
+            "pink": 16, 
+            "black": 36, 
+            "maroon": 1, 
+            "violet": 2, 
+            "orange": 13, 
+            "green": 21, 
+            "white": 38, 
+            "silver": 11, 
+            "red": 21
+        }, 
+        "file": "res/mj.txt"
+    }
+]
