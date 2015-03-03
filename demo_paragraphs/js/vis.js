@@ -2,7 +2,7 @@
 
 			   
 function main() {
-    $.getJSON("res/freq.json",
+    $.getJSON("res/graph.json",
         function (jsonData) {
 			for (var i = 0; i < jsonData.length; i++) {
 				// Add the graph
@@ -115,6 +115,11 @@ function main() {
 				  .attr("class", "axis")
 				  .attr("transform", "translate(0, " + height + ")")
 				  .call(xAxis)
+                  .selectAll("text")
+                  .style("text-anchor", "end")
+                  .attr("dx",-10)
+                  .attr("dy",-5)
+                  .attr("transform", "rotate(-65)")
 				  ;
 				  
 				
