@@ -19,8 +19,10 @@ function main() {
 
         
 var force = d3.layout.force()
-    .charge(-120)
-    .linkDistance(30)
+    .charge(-300)
+    //.charge(-120)
+    .linkDistance(function(d) {return 60+d.wt;})
+    //.linkDistance(30)
     .size([width, height]);
 						  
 				var svg =
@@ -37,8 +39,9 @@ var force = d3.layout.force()
 				force
 				  .nodes(jsonData.vertices)
 				  .links(jsonData.edges)
-				  .linkStrength( function (d) { return d.wt; } )
+				  //.linkStrength(0.1)
 				  //.linkStrength( function (d) { if (d.wt < 10) return 0; return d.wt; } )
+				  .linkStrength( function (d) { return 1-1/d.wt; } )
 				  .start();
       				
   var link = svg.selectAll(".link")
@@ -46,11 +49,11 @@ var force = d3.layout.force()
       .enter()
       .append("line")
       .attr("class", "link")
-      .style("stroke-width",  function(d) { if (d.wt < 10) return 0;  return Math.sqrt(d.wt); } ); // function(d) { return Math.sqrt(d.wt); });
+      .style("stroke-width",  function(d) { return Math.sqrt(d.wt); } ); 
+      //.style("stroke-width",  function(d) { if (d.wt < 5) return 0;  return Math.sqrt(d.wt); } ); 
 
   var node = svg.selectAll(".node")
       .data(jsonData.vertices)
-      //.filter(function(d){return d.weight>50})
       .enter()
       .append("circle")
       .attr("class", "node")

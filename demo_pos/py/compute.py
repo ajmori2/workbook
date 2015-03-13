@@ -4,8 +4,7 @@ from nltk.tokenize import sent_tokenize
 from nltk.tokenize import TextTilingTokenizer
 from nltk import pos_tag
 from nltk import ne_chunk
-from collections import Counter
-        
+from collections import defaultdict        
     
 def traverse(t):
     try:
@@ -39,7 +38,6 @@ def do_compute():
     ''' output:  json file containing a sequence of 
                 frequency tables illustrating the steps
                 required for general text cleaning.'''
-    return
     
     textFile = 'res/hp.txt'
     textRaw = open(textFile).read() #textRaw is now a string
@@ -66,39 +64,32 @@ def do_compute():
     paraPeople = [[persons for persons in p if persons] for p in paraPeople]
     paraPeople = [[[nameString(n) for n in s] for s in p] for p in paraPeople]    
     paraPeople = [flatNames(p) for p in paraPeople]
-    
+        
     #if two people appear in the same paragraph
-    #then we increment the strength of their
-    #association
+    #then we record their association.
     
-    edgeWeight = Counter()
-    vertexWeight = Counter()    
-    uniqueNames = set()
-    for p in paraPeople:
+    edgeParagraphs = defaultdict(list)
+    for i,p in enumerate(paraPeople):
         uniqueNamesPara = set(p)
-        uniqueNames = uniqueNames.union(uniqueNamesPara)
-        for s in uniqueNamesPara:
-            for t in uniqueNamesPara:
+        for s in sorted(uniqueNamesPara):
+            for t in sorted(uniqueNamesPara):
                 if s<t:
-                    edgeWeight[(s,t)] += 1
-                    vertexWeight[s] += 1
-                    vertexWeight[t] += 1
-                
-    vertices = []
-    for name in uniqueNames:
-        vertices.append({'text':name,
-                         'weight':vertexWeight[name]})
+                    edgeParagraphs[(s,t)].append(i)   
     
-    #assemble list of edges
+    #assemble list of edges and vertices
+    #this is ugly because the d3 demands that we refer to 
+    #endpoints by their location in the vertex list
     edges = []
-    numVert = len(vertices)
-    for s in range(numVert):
-        for t in range(s+1,numVert):
-            wt = max(edgeWeight[vertices[s]['text'],vertices[t]['text']],
-                     edgeWeight[vertices[t]['text'],vertices[s]['text']])
-            if wt > 0:
-                edges.append({'source': s, 
-                          'target': t,
+    vertices = []
+    for (s,t) in edgeParagraphs:
+        wt = len(edgeParagraphs[(s,t)])
+        if wt > 5: # demand frequent interaction
+            if {'text':s} not in vertices:
+                vertices.append({'text':s})
+            if {'text':t} not in vertices:
+                vertices.append({'text':t})      
+            edges.append({'source': vertices.index({'text':s}), 
+                          'target': vertices.index({'text':t}),
                           'wt': wt})
 
     outData = {'vertices': vertices,'edges': edges}
