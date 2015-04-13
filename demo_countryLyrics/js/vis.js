@@ -24,7 +24,7 @@ function main() {
               .data(data)
               .enter()
               .append("circle")
-              .attr("cx", function (d) { return d.count * 3 ;})
+              .attr("cx", function (d) { return d.count * 3 + 10 ;})
               .attr("cy", function (d) {return 20 })
               .attr("r", 2)
               .append("svg:title")
