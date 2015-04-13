@@ -4,7 +4,7 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from collections import Counter
 
-def makeFreq(textFile,colorNames):
+def makeFreq(textFile):
     with open (textFile) as data_file:
         jsondata = json.load(data_file)
         freq = Counter()
@@ -60,7 +60,7 @@ def do_compute():
     outData = []
     
     #build the freq table
-    textDict = makeFreq('res/lyrics.json',colorNames)
+    textDict = makeFreq('res/lyrics.json')
     
 	 #Save the processed information
     outData.append(textDict)
