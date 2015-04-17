@@ -10,7 +10,7 @@ function main() {
     		var html = template( {route: jsonData} );
 			document.getElementById("container").innerHTML = html;
     		
-    	});
+    	}).fail(function (d) { alert("Failed to load HBS!"); });
 		
-    }).fail(function (d) { alert("Failed to load JSON!"); });                              
+    }).fail(function (d) { alert("Failed to load JSON!"); });
 }
