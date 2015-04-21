@@ -1,0 +1,571 @@
+{
+    "status": {
+        "msg": "ok", 
+        "code": 200
+    }, 
+    "new_changeset": true, 
+    "departures": [
+        {
+            "origin": {
+                "stop_id": "PAR:2"
+            }, 
+            "scheduled": "2015-04-21T10:08:20-05:00", 
+            "vehicle_id": "0334", 
+            "expected_mins": 0, 
+            "route": {
+                "route_color": "cccccc", 
+                "route_id": "SILVER", 
+                "route_short_name": "13", 
+                "route_text_color": "000000", 
+                "route_long_name": "Silver"
+            }, 
+            "destination": {
+                "stop_id": "LSE:8"
+            }, 
+            "is_monitored": true, 
+            "headsign": "13N Silver", 
+            "is_scheduled": true, 
+            "location": {
+                "lat": 40.099433, 
+                "lon": -88.220833
+            }, 
+            "stop_id": "GRGDNR:2", 
+            "expected": "2015-04-21T10:09:53-05:00", 
+            "is_istop": true, 
+            "trip": {
+                "direction": "North", 
+                "block_id": "SV2 UIMF", 
+                "route_id": "SILVER", 
+                "trip_headsign": "NORTH - LINCOLN SQUARE", 
+                "shape_id": "SILVER 2", 
+                "service_id": "SV2 UIMF", 
+                "trip_id": "[@12.0.42199629@][3][1246896590515]/38__SV2_UIMF"
+            }
+        }, 
+        {
+            "origin": {
+                "stop_id": "IT:5"
+            }, 
+            "scheduled": "2015-04-21T10:05:40-05:00", 
+            "vehicle_id": "1190", 
+            "expected_mins": 0, 
+            "route": {
+                "route_color": "006991", 
+                "route_id": "TEAL", 
+                "route_short_name": "12", 
+                "route_text_color": "ffffff", 
+                "route_long_name": "Teal"
+            }, 
+            "destination": {
+                "stop_id": "ODSS:1"
+            }, 
+            "is_monitored": true, 
+            "headsign": "12E Teal Orchard Downs", 
+            "is_scheduled": true, 
+            "location": {
+                "lat": 40.104247, 
+                "lon": -88.223833
+            }, 
+            "stop_id": "GRGDNR:3", 
+            "expected": "2015-04-21T10:10:09-05:00", 
+            "is_istop": true, 
+            "trip": {
+                "direction": "East", 
+                "block_id": "T1UIMF", 
+                "route_id": "TEAL", 
+                "trip_headsign": "EAST - ORCHARD DOWNS", 
+                "shape_id": "12E TEAL 13", 
+                "service_id": "T1UIMF", 
+                "trip_id": "[@7.0.41893871@][3][1243541396687]/78__T1UIMF"
+            }
+        }, 
+        {
+            "origin": {
+                "stop_id": "LSE:8"
+            }, 
+            "scheduled": "2015-04-21T10:07:30-05:00", 
+            "vehicle_id": "0915", 
+            "expected_mins": 0, 
+            "route": {
+                "route_color": "cccccc", 
+                "route_id": "SILVER", 
+                "route_short_name": "13", 
+                "route_text_color": "000000", 
+                "route_long_name": "Silver"
+            }, 
+            "destination": {
+                "stop_id": "PAR:2"
+            }, 
+            "is_monitored": true, 
+            "headsign": "13S Silver", 
+            "is_scheduled": true, 
+            "location": {
+                "lat": 40.10412, 
+                "lon": -88.227333
+            }, 
+            "stop_id": "GRGDNR:3", 
+            "expected": "2015-04-21T10:10:28-05:00", 
+            "is_istop": true, 
+            "trip": {
+                "direction": "South", 
+                "block_id": "SV1UI", 
+                "route_id": "SILVER", 
+                "trip_headsign": "SOUTH - PAR", 
+                "shape_id": "SILVER 120", 
+                "service_id": "SV1UI", 
+                "trip_id": "[@12.0.42199629@][4][1246896960625]/104__SV1UI"
+            }
+        }, 
+        {
+            "origin": {
+                "stop_id": "PAR:2"
+            }, 
+            "scheduled": "2015-04-21T10:14:16-05:00", 
+            "vehicle_id": "0103", 
+            "expected_mins": 4, 
+            "route": {
+                "route_color": "006991", 
+                "route_id": "TEAL", 
+                "route_short_name": "12", 
+                "route_text_color": "ffffff", 
+                "route_long_name": "Teal"
+            }, 
+            "destination": {
+                "stop_id": "IU:2"
+            }, 
+            "is_monitored": true, 
+            "headsign": "12W Teal", 
+            "is_scheduled": true, 
+            "location": {
+                "lat": 40.100573, 
+                "lon": -88.220833
+            }, 
+            "stop_id": "GRGDNR:2", 
+            "expected": "2015-04-21T10:14:16-05:00", 
+            "is_istop": true, 
+            "trip": {
+                "direction": "West", 
+                "block_id": "T3UIMF", 
+                "route_id": "TEAL", 
+                "trip_headsign": "WEST - ILLINI UNION", 
+                "shape_id": "TEAL 24", 
+                "service_id": "T3UIMF", 
+                "trip_id": "[@14.0.51708725@][4][1275506226500]/24__T3UIMF"
+            }
+        }, 
+        {
+            "origin": {
+                "stop_id": "PAR:2"
+            }, 
+            "scheduled": "2015-04-21T10:18:20-05:00", 
+            "vehicle_id": "0915", 
+            "expected_mins": 8, 
+            "route": {
+                "route_color": "cccccc", 
+                "route_id": "SILVER", 
+                "route_short_name": "13", 
+                "route_text_color": "000000", 
+                "route_long_name": "Silver"
+            }, 
+            "destination": {
+                "stop_id": "LSE:8"
+            }, 
+            "is_monitored": true, 
+            "headsign": "13N Silver", 
+            "is_scheduled": true, 
+            "location": {
+                "lat": 40.10412, 
+                "lon": -88.227333
+            }, 
+            "stop_id": "GRGDNR:2", 
+            "expected": "2015-04-21T10:18:20-05:00", 
+            "is_istop": true, 
+            "trip": {
+                "direction": "North", 
+                "block_id": "SV1UI", 
+                "route_id": "SILVER", 
+                "trip_headsign": "NORTH - LINCOLN SQUARE", 
+                "shape_id": "SILVER 2", 
+                "service_id": "SV1UI", 
+                "trip_id": "[@12.0.42199629@][3][1246896440906]/8__SV1UI"
+            }
+        }, 
+        {
+            "origin": {
+                "stop_id": "LSE:8"
+            }, 
+            "scheduled": "2015-04-21T10:17:30-05:00", 
+            "vehicle_id": "1349", 
+            "expected_mins": 9, 
+            "route": {
+                "route_color": "cccccc", 
+                "route_id": "SILVER", 
+                "route_short_name": "13", 
+                "route_text_color": "000000", 
+                "route_long_name": "Silver"
+            }, 
+            "destination": {
+                "stop_id": "VETMED:1"
+            }, 
+            "is_monitored": true, 
+            "headsign": "13S Silver", 
+            "is_scheduled": true, 
+            "location": {
+                "lat": 40.112797, 
+                "lon": -88.217833
+            }, 
+            "stop_id": "GRGDNR:3", 
+            "expected": "2015-04-21T10:18:51-05:00", 
+            "is_istop": true, 
+            "trip": {
+                "direction": "South", 
+                "block_id": "SV4 SCHUIMF", 
+                "route_id": "SILVER", 
+                "trip_headsign": "SOUTH - VET-MED", 
+                "shape_id": "SILVER 3", 
+                "service_id": "SV4 SCHUIMF", 
+                "trip_id": "[@12.0.42199629@][4][1246896833000]/75__SV4_SCHUIMF"
+            }
+        }, 
+        {
+            "origin": {
+                "stop_id": "IT:5"
+            }, 
+            "scheduled": "2015-04-21T10:25:40-05:00", 
+            "vehicle_id": "0319", 
+            "expected_mins": 15, 
+            "route": {
+                "route_color": "006991", 
+                "route_id": "TEAL", 
+                "route_short_name": "12", 
+                "route_text_color": "ffffff", 
+                "route_long_name": "Teal"
+            }, 
+            "destination": {
+                "stop_id": "ODSS:1"
+            }, 
+            "is_monitored": true, 
+            "headsign": "12E Teal Orchard Downs", 
+            "is_scheduled": true, 
+            "location": {
+                "lat": 40.115267, 
+                "lon": -88.2415
+            }, 
+            "stop_id": "GRGDNR:3", 
+            "expected": "2015-04-21T10:25:40-05:00", 
+            "is_istop": true, 
+            "trip": {
+                "direction": "East", 
+                "block_id": "T4UIMF", 
+                "route_id": "TEAL", 
+                "trip_headsign": "EAST - ORCHARD DOWNS", 
+                "shape_id": "12E TEAL 13", 
+                "service_id": "T4UIMF", 
+                "trip_id": "[@7.0.41893871@][3][1243541396687]/79__T4UIMF"
+            }
+        }, 
+        {
+            "origin": {
+                "stop_id": "LSE:8"
+            }, 
+            "scheduled": "2015-04-21T10:27:30-05:00", 
+            "vehicle_id": "1354", 
+            "expected_mins": 17, 
+            "route": {
+                "route_color": "cccccc", 
+                "route_id": "SILVER", 
+                "route_short_name": "13", 
+                "route_text_color": "000000", 
+                "route_long_name": "Silver"
+            }, 
+            "destination": {
+                "stop_id": "PAR:2"
+            }, 
+            "is_monitored": true, 
+            "headsign": "13S Silver", 
+            "is_scheduled": true, 
+            "location": {
+                "lat": 40.112733, 
+                "lon": -88.219583
+            }, 
+            "stop_id": "GRGDNR:3", 
+            "expected": "2015-04-21T10:27:30-05:00", 
+            "is_istop": true, 
+            "trip": {
+                "direction": "South", 
+                "block_id": "SV3 UIMF", 
+                "route_id": "SILVER", 
+                "trip_headsign": "SOUTH - PAR", 
+                "shape_id": "SILVER 120", 
+                "service_id": "SV3 UIMF", 
+                "trip_id": "[@12.0.42199629@][4][1246896960625]/105__SV3_UIMF"
+            }
+        }, 
+        {
+            "origin": {
+                "stop_id": "VETMED:1"
+            }, 
+            "scheduled": "2015-04-21T10:26:20-05:00", 
+            "vehicle_id": "1349", 
+            "expected_mins": 18, 
+            "route": {
+                "route_color": "cccccc", 
+                "route_id": "SILVER", 
+                "route_short_name": "13", 
+                "route_text_color": "000000", 
+                "route_long_name": "Silver"
+            }, 
+            "destination": {
+                "stop_id": "LSE:8"
+            }, 
+            "is_monitored": true, 
+            "headsign": "13N Silver", 
+            "is_scheduled": true, 
+            "location": {
+                "lat": 40.112797, 
+                "lon": -88.217833
+            }, 
+            "stop_id": "GRGDNR:2", 
+            "expected": "2015-04-21T10:27:41-05:00", 
+            "is_istop": true, 
+            "trip": {
+                "direction": "North", 
+                "block_id": "SV4 SCHUIMF", 
+                "route_id": "SILVER", 
+                "trip_headsign": "NORTH - LINCOLN SQUARE", 
+                "shape_id": "SILVER 1", 
+                "service_id": "SV4 SCHUIMF", 
+                "trip_id": "[@12.0.42199629@][3][1246896590515]/39__SV4_SCHUIMF"
+            }
+        }, 
+        {
+            "origin": {
+                "stop_id": "ODSS:1"
+            }, 
+            "scheduled": "2015-04-21T10:23:56-05:00", 
+            "vehicle_id": "1190", 
+            "expected_mins": 18, 
+            "route": {
+                "route_color": "006991", 
+                "route_id": "TEAL", 
+                "route_short_name": "12", 
+                "route_text_color": "ffffff", 
+                "route_long_name": "Teal"
+            }, 
+            "destination": {
+                "stop_id": "IT:5"
+            }, 
+            "is_monitored": true, 
+            "headsign": "12W Teal", 
+            "is_scheduled": true, 
+            "location": {
+                "lat": 40.104247, 
+                "lon": -88.223833
+            }, 
+            "stop_id": "GRGDNR:2", 
+            "expected": "2015-04-21T10:27:55-05:00", 
+            "is_istop": true, 
+            "trip": {
+                "direction": "West", 
+                "block_id": "T1UIMF", 
+                "route_id": "TEAL", 
+                "trip_headsign": "WEST - ILLINOIS TERMINAL", 
+                "shape_id": "12W TEAL 12", 
+                "service_id": "T1UIMF", 
+                "trip_id": "[@7.0.41893871@][4][1243540851671]/10__T1UIMF"
+            }
+        }, 
+        {
+            "origin": {
+                "stop_id": "PAR:2"
+            }, 
+            "scheduled": "2015-04-21T10:34:16-05:00", 
+            "vehicle_id": "0103", 
+            "expected_mins": 24, 
+            "route": {
+                "route_color": "006991", 
+                "route_id": "TEAL", 
+                "route_short_name": "12", 
+                "route_text_color": "ffffff", 
+                "route_long_name": "Teal"
+            }, 
+            "destination": {
+                "stop_id": "IT:5"
+            }, 
+            "is_monitored": true, 
+            "headsign": "12W Teal", 
+            "is_scheduled": true, 
+            "location": {
+                "lat": 40.100573, 
+                "lon": -88.220833
+            }, 
+            "stop_id": "GRGDNR:2", 
+            "expected": "2015-04-21T10:34:16-05:00", 
+            "is_istop": true, 
+            "trip": {
+                "direction": "West", 
+                "block_id": "T3UIMF", 
+                "route_id": "TEAL", 
+                "trip_headsign": "WEST - ILLINOIS TERMINAL", 
+                "shape_id": "TEAL 23", 
+                "service_id": "T3UIMF", 
+                "trip_id": "[@14.0.51708725@][4][1275506079140]/7__T3UIMF"
+            }
+        }, 
+        {
+            "origin": {
+                "stop_id": "IT:5"
+            }, 
+            "scheduled": "2015-04-21T10:35:00-05:00", 
+            "vehicle_id": "0101", 
+            "expected_mins": 25, 
+            "route": {
+                "route_color": "006991", 
+                "route_id": "TEAL", 
+                "route_short_name": "12", 
+                "route_text_color": "ffffff", 
+                "route_long_name": "Teal"
+            }, 
+            "destination": {
+                "stop_id": "PAR:2"
+            }, 
+            "is_monitored": true, 
+            "headsign": "12E Teal PAR", 
+            "is_scheduled": true, 
+            "location": {
+                "lat": 40.11039, 
+                "lon": -88.22875
+            }, 
+            "stop_id": "GRGDNR:3", 
+            "expected": "2015-04-21T10:35:00-05:00", 
+            "is_istop": true, 
+            "trip": {
+                "direction": "East", 
+                "block_id": "T2UIMF", 
+                "route_id": "TEAL", 
+                "trip_headsign": "EAST - PAR", 
+                "shape_id": "TEAL 34", 
+                "service_id": "T2UIMF", 
+                "trip_id": "[@7.0.41893871@][3][1243541488843]/113__T2UIMF"
+            }
+        }, 
+        {
+            "origin": {
+                "stop_id": "LSE:8"
+            }, 
+            "scheduled": "2015-04-21T10:37:30-05:00", 
+            "vehicle_id": "0334", 
+            "expected_mins": 27, 
+            "route": {
+                "route_color": "cccccc", 
+                "route_id": "SILVER", 
+                "route_short_name": "13", 
+                "route_text_color": "000000", 
+                "route_long_name": "Silver"
+            }, 
+            "destination": {
+                "stop_id": "VETMED:1"
+            }, 
+            "is_monitored": true, 
+            "headsign": "13S Silver", 
+            "is_scheduled": true, 
+            "location": {
+                "lat": 40.099433, 
+                "lon": -88.220833
+            }, 
+            "stop_id": "GRGDNR:3", 
+            "expected": "2015-04-21T10:37:30-05:00", 
+            "is_istop": true, 
+            "trip": {
+                "direction": "South", 
+                "block_id": "SV2 UIMF", 
+                "route_id": "SILVER", 
+                "trip_headsign": "SOUTH - VET-MED", 
+                "shape_id": "SILVER 3", 
+                "service_id": "SV2 UIMF", 
+                "trip_id": "[@12.0.42199629@][4][1246896833000]/76__SV2_UIMF"
+            }
+        }, 
+        {
+            "origin": {
+                "stop_id": "PLAZA:2"
+            }, 
+            "scheduled": "2015-04-21T10:34:21-05:00", 
+            "vehicle_id": "1347", 
+            "expected_mins": 28, 
+            "route": {
+                "route_color": "9e8966", 
+                "route_id": "BRONZE", 
+                "route_short_name": "8", 
+                "route_text_color": "000000", 
+                "route_long_name": "Bronze"
+            }, 
+            "destination": {
+                "stop_id": "LSE:1"
+            }, 
+            "is_monitored": true, 
+            "headsign": "8E Bronze", 
+            "is_scheduled": true, 
+            "location": {
+                "lat": 40.111973, 
+                "lon": -88.2075
+            }, 
+            "stop_id": "GRGDNR:3", 
+            "expected": "2015-04-21T10:37:51-05:00", 
+            "is_istop": false, 
+            "trip": {
+                "direction": "East", 
+                "block_id": "BZ1SCH", 
+                "route_id": "BRONZE", 
+                "trip_headsign": "EAST - LINCOLN SQUARE", 
+                "shape_id": "8E", 
+                "service_id": "BZ1SCH", 
+                "trip_id": "[@7.0.41201636@][3][1243611110703]/1__BZ1SCH"
+            }
+        }, 
+        {
+            "origin": {
+                "stop_id": "PAR:2"
+            }, 
+            "scheduled": "2015-04-21T10:38:20-05:00", 
+            "vehicle_id": "1354", 
+            "expected_mins": 28, 
+            "route": {
+                "route_color": "cccccc", 
+                "route_id": "SILVER", 
+                "route_short_name": "13", 
+                "route_text_color": "000000", 
+                "route_long_name": "Silver"
+            }, 
+            "destination": {
+                "stop_id": "LSE:8"
+            }, 
+            "is_monitored": true, 
+            "headsign": "13N Silver", 
+            "is_scheduled": true, 
+            "location": {
+                "lat": 40.112733, 
+                "lon": -88.219583
+            }, 
+            "stop_id": "GRGDNR:2", 
+            "expected": "2015-04-21T10:38:20-05:00", 
+            "is_istop": true, 
+            "trip": {
+                "direction": "North", 
+                "block_id": "SV3 UIMF", 
+                "route_id": "SILVER", 
+                "trip_headsign": "NORTH - LINCOLN SQUARE", 
+                "shape_id": "SILVER 2", 
+                "service_id": "SV3 UIMF", 
+                "trip_id": "[@12.0.42199629@][3][1246896440906]/9__SV3_UIMF"
+            }
+        }
+    ], 
+    "rqst": {
+        "params": {
+            "stop_id": "GRGDNR"
+        }, 
+        "method": "GetDeparturesByStop"
+    }, 
+    "time": "2015-04-21T10:10:10-05:00"
+}
