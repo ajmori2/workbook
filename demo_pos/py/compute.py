@@ -38,7 +38,7 @@ def do_compute():
     ''' output:  json file containing a sequence of 
                 frequency tables illustrating the steps
                 required for general text cleaning.'''
-    
+    return
     textFile = 'res/hp.txt'
     textRaw = open(textFile).read() #textRaw is now a string
     

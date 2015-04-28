@@ -1,0 +1,59 @@
+{
+    "13N Silver": {
+        "color": "cccccc", 
+        "expected": [
+            0, 
+            8, 
+            18, 
+            28
+        ], 
+        "headsign": "13N Silver", 
+        "text_color": "000000"
+    }, 
+    "13S Silver": {
+        "color": "cccccc", 
+        "expected": [
+            0, 
+            9, 
+            17, 
+            27
+        ], 
+        "headsign": "13S Silver", 
+        "text_color": "000000"
+    }, 
+    "12W Teal": {
+        "color": "006991", 
+        "expected": [
+            4, 
+            18, 
+            24
+        ], 
+        "headsign": "12W Teal", 
+        "text_color": "ffffff"
+    }, 
+    "8E Bronze": {
+        "color": "9e8966", 
+        "expected": [
+            28
+        ], 
+        "headsign": "8E Bronze", 
+        "text_color": "000000"
+    }, 
+    "12E Teal Orchard Downs": {
+        "color": "006991", 
+        "expected": [
+            0, 
+            15
+        ], 
+        "headsign": "12E Teal Orchard Downs", 
+        "text_color": "ffffff"
+    }, 
+    "12E Teal PAR": {
+        "color": "006991", 
+        "expected": [
+            25
+        ], 
+        "headsign": "12E Teal PAR", 
+        "text_color": "ffffff"
+    }
+}

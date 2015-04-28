@@ -1,0 +1,50 @@
+import json
+import urllib
+from itertools import permutations
+from collections import defaultdict
+
+def buildMatrix(gmapsResult):
+    cities = gmapsResult['origin_addresses']
+    table = defaultdict(dict)
+    for i,origin in enumerate(cities):
+        for j,destination in enumerate(cities):
+            table[origin][destination] = gmapsResult['rows'][i]['elements'][j]['duration']['value']
+    return cities, table
+
+def computeDist(r,distMatrix):
+    sum = 0
+    for k,leg in enumerate(r):
+        sum += distMatrix[leg][r[(k+1)%len(r)]]
+    return sum
+
+def bestRoute(cities,distMatrix):
+    minDist = computeDist(cities,distMatrix)
+    minRoute = cities
+    for c in permutations(cities[1:]):
+        route = (cities[0],) + c
+        dist = computeDist(route,distMatrix)
+        if dist < minDist:
+            minDist = dist
+            minRoute = route
+    return minRoute
+    
+def do_compute():
+
+    cities_seed = ["glacier national park","acadia national park","yosemite","cape hatteras national park","grand canyon","everglades national park"]
+    cities_str = '|'.join(cities_seed)
+
+    url = "http://maps.googleapis.com/maps/api/distancematrix/json?origins={0}&destinations={0}&mode=driving&language=en-EN".format(cities_str)
+    result = json.load(urllib.urlopen(url))
+
+    cities,distMatrix = buildMatrix(result)
+    minRoute = bestRoute(cities,distMatrix)
+    #minRoute = tuple(cities)
+
+    output = {'route': minRoute + (minRoute[0],)}
+
+    # Save our JSON
+    f = open("res/data.json", "w")
+    s = json.dumps(output, indent = 4)
+    f.write(s)
+
+    return 1  

@@ -1,50 +1,50 @@
 [
     {
-        "right": "res/flower.jpg", 
-        "left": "res/yosemite.jpg"
-    }, 
-    {
-        "right": "res/flower.jpg", 
-        "left": "res/mtRanier.jpg"
-    }, 
-    {
-        "right": "res/mtRanier.jpg", 
+        "right": "res/map.jpg", 
         "left": "res/yellowstone.jpg"
-    }, 
-    {
-        "right": "res/teton.jpg", 
-        "left": "res/teton.jpg"
     }, 
     {
         "right": "res/HavasuFalls.jpg", 
-        "left": "res/yellowstone.jpg"
+        "left": "res/HavasuFalls.jpg"
     }, 
     {
-        "right": "res/yosemite.jpg", 
-        "left": "res/flower.jpg"
-    }, 
-    {
-        "right": "res/bryce.jpg", 
+        "right": "res/HavasuFalls.jpg", 
         "left": "res/map.jpg"
     }, 
     {
         "right": "res/bryce.jpg", 
-        "left": "res/flower.jpg"
-    }, 
-    {
-        "right": "res/HavasuFalls.jpg", 
-        "left": "res/teton.jpg"
-    }, 
-    {
-        "right": "res/yellowstone.jpg", 
         "left": "res/HavasuFalls.jpg"
     }, 
     {
-        "right": "res/bryce.jpg", 
-        "left": "res/Mesa-Verde-National-Park.jpg"
+        "right": "res/HavasuFalls.jpg", 
+        "left": "res/bears.jpg"
+    }, 
+    {
+        "right": "res/map.jpg", 
+        "left": "res/yellowstone.jpg"
+    }, 
+    {
+        "right": "res/Mesa-Verde-National-Park.jpg", 
+        "left": "res/HavasuFalls.jpg"
+    }, 
+    {
+        "right": "res/yosemite.jpg", 
+        "left": "res/yosemite.jpg"
     }, 
     {
         "right": "res/teton.jpg", 
-        "left": "res/yellowstone.jpg"
+        "left": "res/Mesa-Verde-National-Park.jpg"
+    }, 
+    {
+        "right": "res/yellowstone.jpg", 
+        "left": "res/teton.jpg"
+    }, 
+    {
+        "right": "res/HavasuFalls.jpg", 
+        "left": "res/bears.jpg"
+    }, 
+    {
+        "right": "res/teton.jpg", 
+        "left": "res/bears.jpg"
     }
 ]

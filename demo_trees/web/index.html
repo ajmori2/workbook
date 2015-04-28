@@ -1,0 +1,52 @@
+
+{% extends "templates/base.html" %}
+{% block content %}
+
+<div class="container">
+    
+    <script src="https://code.jquery.com/jquery-2.1.3.js"></script>
+    <script src="/static/underscore.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.1.1/tinycolor.js"></script>
+    
+    <script src="js/vis.js"></script>
+    <script>
+        main();
+    </script>
+</div>
+
+      <div class="jumbotron">
+        <div class="container">
+          <h1>Demo: This graph is the social network of characters from "Harry Potter" </h1>
+          <h2>I used NER to discover characters within each paragraph, and then counted co-occurences of characters.  If characters occured in the same paragraph twice, then there is an edge between them in the social network.</h2>
+        </div>
+       </div>
+
+<style>
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+}
+
+.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.link {
+  stroke: red;
+  stroke-opacity: .6;
+}
+</style>
+
+<div class="container" id="content">
+</div>
+
+{% endblock %}

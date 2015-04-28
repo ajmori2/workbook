@@ -1,0 +1,37 @@
+
+
+        var directionsDisplay;
+        var directionsService = new google.maps.DirectionsService();
+        var map;
+
+        function initialize() {
+            directionsDisplay = new google.maps.DirectionsRenderer();
+            var chicago = new google.maps.LatLng(41.850033, -87.6500523);
+            var mapOptions = {
+                 zoom:7,
+                 center: chicago };
+            map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+            directionsDisplay.setMap(map);
+
+            $.getJSON("res/data.json", function (jsonData) {
+                 var route = jsonData.route;
+                 var waypts = [];
+                 for (var i = 1; i < route.length-1; i++) {
+                       waypts.push({ location:route[i] });
+                 }
+                 var request = {
+                      origin:route[0],
+                      destination:route[0],
+                      waypoints:waypts,
+                      travelMode: google.maps.TravelMode.DRIVING };
+
+                 directionsService.route(request, function(result, status) {
+                      if (status == google.maps.DirectionsStatus.OK) {
+                           directionsDisplay.setDirections(result); }
+                 });
+                 }).fail(function (d) { alert("Failed to load JSON!"); });
+        }
+    
+        google.maps.event.addDomListener(window, 'load', initialize);
+		
+
