@@ -15,7 +15,7 @@ basecwd = os.getcwd()
 # Route the base URL to the main page
 @app.route('/')
 def home():
-    return render_template('./templates/mainPage.html')
+    return render_template('temp.html')
 
 @app.route('/<exerciseName>/res/<path:fileName>')
 def fetchRes(exerciseName, fileName):
