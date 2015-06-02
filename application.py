@@ -15,7 +15,7 @@ basecwd = os.getcwd()
 # Route the base URL to the main page
 @app.route('/')
 def home():
-    return render_template('templates/mainPage.html')
+    return render_template('./templates/mainPage.html')
 
 @app.route('/<exerciseName>/res/<path:fileName>')
 def fetchRes(exerciseName, fileName):
@@ -25,6 +25,7 @@ def fetchRes(exerciseName, fileName):
 def fetchJS(exerciseName, fileName):
 	return send_from_directory(os.path.join(exerciseName, 'js'), fileName)
 
+"""
 # Route everything else to an exercise:
 @app.route('/<exerciseName>/')
 def fetchExercise(exerciseName):
@@ -44,6 +45,7 @@ def fetchExercise(exerciseName):
 	result = render_template(exerciseName + '/web/index.html')
 	
 	return result
+"""
 
 @app.errorhandler(404)
 def not_found(error):
